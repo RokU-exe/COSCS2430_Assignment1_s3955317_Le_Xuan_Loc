@@ -1,0 +1,362 @@
+ /*RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 1
+Author: Le Xuan Loc
+ID: s3955317
+Acknowledgement: Module 1 Lecture Slides: https://docs.google.com/presentation/d/1SDQ93gE_d78CyGfKAX0MZCZfs3ab2jhTiTK_1PLyUA4/edit#slide=id.p5
+                 Module 2 Lecture Slides: https://docs.google.com/presentation/d/1Fo9gaISnUDUuCyzKpwvl9Th0qdYpathLuU_hsWSvvU4/edit#slide=id.p5
+                 Module 3 Lecture Slides: https://docs.google.com/presentation/d/1olVSMUgl5N3GdCwYoMN_6ybdDpENmJ6T4AJeec9kmT0/edit#slide=id.p5
+                 Module 4 Lecture Slides: https://docs.google.com/presentation/d/1-n3dKukvIvmIcnkL-uaguVkBlTsgmX9FSZ-2z6UvjU8/edit#slide=id.p5
+*/
+*{
+    margin: 0; padding:0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+}
+body{
+    max-width: 100%;
+    min-height: 100vh;
+    background: url(wp2036898.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    line-height: 1.5;
+}
+header{
+    position: fixed;
+    top: 0; left: 0;right: 0;
+    padding: 0px 7%;
+    box-shadow: 0 5px 10px black;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+header .navbar ul{
+    list-style: none;
+}
+header .navbar ul li{
+    position: relative;
+    float:left ;
+}
+header .navbar ul li a{
+    font-size: 20px;
+    padding: 20px;
+    color: black;
+    display: block;
+}
+header .navbar ul li a:hover{
+    background: black;
+    color: white;
+}
+header .navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: white;
+    display: none;
+}
+#menu-bar{
+    display: none; 
+}
+header label{
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    display: none;
+}
+header .navbar ul li ul li{
+    width: 100%;
+    border-top: 0.1px solid black;
+}
+header .navbar ul li:focus-within >ul,
+header .navbar ul li:hover > ul{
+    display: initial;
+}
+header .logo{
+    font-weight: bolder;
+    font-size: 30px;
+    color: black;
+    font-family: cursive;
+}
+p{
+    font-size: 60px;
+    text-align: center;
+    font-family: cursive;
+}
+legend{
+    text-align: center;
+    font-size: 40px;
+}
+.container{
+    width: 1100px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    flex: 1 1 20rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    align-self: normal;
+}
+.card .books{
+    display: inline-block;
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: auto;
+    transition: 0.3s;
+}
+.card .books:hover{
+    background-color: rgb(228, 159, 56);
+    color: white;
+}   
+.card h4{
+    padding: 10px 0;
+    font-size: 25px;
+}
+.card img{
+    max-width: 250px;
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+footer .footer-nav ul{
+    list-style: none;
+}
+footer .footer-nav ul li{
+    position: relative;
+    float:left ;
+}
+footer .footer-nav ul li a{
+    font-size: 15px;
+    padding: 20px;
+    display: block;
+}
+footer .logo{
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: cursive;
+    padding: 20px;
+}
+
+.sections{
+    text-align: center;
+    font-size: 25px;
+}
+.sections :hover{
+    color: rgb(228, 159, 56);
+}
+
+
+
+
+
+
+@media(max-width:991px){
+    header{
+        padding: 20px;
+    }
+    header label{
+        display: initial;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%; left: 0%; right: 0;
+        background: white;
+        border-top: 1px solid black;
+        display: none;
+    }
+    header .navbar ul li{
+        width: 100%;
+    }
+    header .navbar ul li ul{
+        position: relative;
+        width: 100%;
+    }
+    header .navbar ul li ul li{
+        background: #eee;
+    }
+    #menu-bar:checked ~ .navbar{
+        display: initial;
+    }
+}
+
+.row1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0;
+}
+.col-1{
+    flex-basis: 40%;
+    position: relative;
+    margin-left: 50px;
+}
+.col-1 h2{
+    font-size: 40px;
+    color: white;
+}
+.col-1 p{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+.col-1 h4{
+    margin: 30px 0;
+    color: white;
+    font-size: 20px;
+}
+button{
+    width: 140px;
+    border: 0;
+    padding: 12px 10px;
+    outline: none;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+button:hover{
+    background-color: rgb(228, 159, 56);
+    color: white;
+}
+.col-1::after{
+    content: '';
+    width: 10px;
+    height: 100%;
+    background: white;
+    position: absolute;
+    left: -30px;
+    top: 8px;
+}
+.col-3{
+    position: relative;
+    flex-basis: 60%;
+    display: flex;
+    align-items: center;
+}
+.col-3 .books{
+    width: 90%;
+}
+
+@media only screen and (max-width: 700px){  
+    .row1{
+        flex-direction: column-reverse;
+        margin: 50px 0;
+    }
+    .col-3{
+        flex-basis: 100%;
+        margin-bottom: 50px;
+    }
+    .col-3 .books{
+        width: 77%;
+    }
+    .col-1{
+        flex-basis: 100%;
+    }
+    .col-1 h2{
+        font-size: 35px;
+    }
+}
+.contact-page{
+    padding: 30px;
+    font-size: 22px;
+}
+input{
+    color: black;
+}
+fieldset{
+    padding: 20px;
+}
+form h2{
+    text-align: center;
+    font-size: 40px;
+}
+.container-1{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.container-1 input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+.container-1:hover input ~ .checkmark{
+    background-color: #ccc;
+}
+.container-1 input:checked ~ .checkmark{
+    background-color: #2196F3;
+  }
+.checkmark:after{
+    content: "";
+    position: absolute;
+    display: none;
+}
+.container-1 input:checked ~ .checkmark:after{
+    display: block;
+}
+.container-1 .checkmark:after{
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+input[type="submit"]{
+    width: 100px;
+    padding: 5px;
+    border: none;
+    font-size: 22px;
+}
+input[type="submit"]:hover{
+    background-color: rgb(228, 159, 56);
+    color: white;
+}
+input[type="reset"]{
+    width: 50px;
+    padding: 5px;
+}
+input[type="textarea"]{
+    width: 350px;
+    padding: 15px;
+}
+#Contact_purpose{
+    color: black;
+}
